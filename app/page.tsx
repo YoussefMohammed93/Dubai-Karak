@@ -1,5 +1,3 @@
-import Footer from "@/components/footer";
-import { Header } from "@/components/header";
 import HeroSection from "@/components/home-page/hero-section";
 import AboutSection from "@/components/home-page/about-section";
 import ProductsServicesSection from "@/components/home-page/products-services-section";
@@ -7,11 +5,9 @@ import ProductsServicesSection from "@/components/home-page/products-services-se
 export default function HomePage() {
   return (
     <main>
-      <Header />
       <HeroSection />
       <ProductsServicesSection />
       <AboutSection />
-      <Footer />
     </main>
   );
 }

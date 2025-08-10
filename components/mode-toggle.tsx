@@ -71,10 +71,6 @@ export function ModeToggle() {
       <div className="relative flex items-center justify-center">
         {getThemeIcon()}
       </div>
-      {/* Theme label */}
-      <span className="hidden sm:block text-xs font-medium font-[family-name:var(--font-geist-sans)] relative z-10">
-        {getThemeLabel()}
-      </span>
       <span className="sr-only">
         Current theme: {getThemeLabel()}. Click to cycle through light, dark,
         and system themes.
