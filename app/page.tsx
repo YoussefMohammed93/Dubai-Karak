@@ -1,9 +1,11 @@
-import { ModeToggle } from "@/components/mode-toggle";
+import { Header } from "@/components/header";
+import HeroSection from "@/components/home-page/hero-section";
 
 export default function HomePage() {
   return (
-    <div className="w-full h-screen flex items-center justify-center">
-      <ModeToggle />
-    </div>
+    <main>
+      <Header />
+      <HeroSection />
+    </main>
   );
 }
