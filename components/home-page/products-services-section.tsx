@@ -22,7 +22,7 @@ export default function ProductsServicesSection() {
             Products & Services
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight font-[family-name:var(--font-merienda)] text-foreground">
-            Our Premium Karak Experience
+            Our Premium <span className="text-primary">Karak</span> Experience
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-[family-name:var(--font-geist-sans)]">
             From carefully sourced ingredients to expertly crafted beverages,
