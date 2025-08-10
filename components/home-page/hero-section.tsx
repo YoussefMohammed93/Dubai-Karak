@@ -5,7 +5,7 @@ import { ArrowRight, Star, Coffee, Heart } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-primary/20 dark:from-primary/15 via-primary/5 to-primary/15 flex items-center justify-center overflow-hidden dark:bg-muted/50">
+    <section className="relative min-h-screen bg-gradient-to-br from-primary/20 dark:from-primary/15 via-primary/5 to-primary/15 flex items-center justify-center overflow-hidden dark:bg-muted/50 pb-12">
       {/* Background Pattern */}
       <div className="hidden md:block absolute inset-0 bg-grid-pattern opacity-35 dark:opacity-100"></div>
       {/* Shape 1 - Grid Dots Pattern */}
