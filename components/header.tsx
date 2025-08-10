@@ -12,6 +12,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Menu, Coffee, Home, Info, MapPin, Phone, Star } from "lucide-react";
@@ -28,6 +29,7 @@ const navigationItems = [
 export function Header() {
   const [isSheetOpen, setIsSheetOpen] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const pathname = usePathname();
 
   // Handle scroll effect
   React.useEffect(() => {
@@ -90,15 +92,31 @@ export function Header() {
           >
             {navigationItems.map((item) => {
               const IconComponent = item.icon;
+              const isActive = pathname === item.href;
               return (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="relative group flex items-center space-x-2 text-base font-medium text-muted-foreground hover:text-foreground transition-all duration-300 px-4 py-2 rounded-xl hover:bg-primary/5 dark:hover:bg-primary/10 font-[family-name:var(--font-geist-sans)]"
+                  className={cn(
+                    "relative group flex items-center space-x-2 text-base font-medium transition-all duration-300 px-4 py-2 rounded-xl font-[family-name:var(--font-geist-sans)]",
+                    isActive
+                      ? "text-foreground bg-primary/5 dark:bg-primary/10"
+                      : "text-muted-foreground hover:text-foreground hover:bg-primary/5 dark:hover:bg-primary/10"
+                  )}
                 >
-                  <IconComponent className="w-4 h-4 group-hover:text-primary transition-colors duration-300" />
+                  <IconComponent
+                    className={cn(
+                      "w-4 h-4 transition-colors duration-300",
+                      isActive ? "text-primary" : "group-hover:text-primary"
+                    )}
+                  />
                   <span>{item.name}</span>
-                  <span className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-primary/60 to-primary transition-all duration-300 group-hover:w-10 rounded-full" />
+                  <span
+                    className={cn(
+                      "absolute -bottom-1 left-1/2 transform -translate-x-1/2 h-0.5 bg-gradient-to-r from-primary/60 to-primary transition-all duration-300 rounded-full",
+                      isActive ? "w-10" : "w-0 group-hover:w-10"
+                    )}
+                  />
                 </Link>
               );
             })}
@@ -148,18 +166,38 @@ export function Header() {
                   <div className="flex flex-col space-y-2">
                     {navigationItems.map((item) => {
                       const IconComponent = item.icon;
+                      const isActive = pathname === item.href;
                       return (
                         <Link
                           key={item.name}
                           href={item.href}
                           onClick={closeSheet}
-                          className="group flex items-center space-x-4 text-base font-medium text-muted-foreground hover:text-foreground hover:bg-primary/5 transition-all duration-300 py-4 px-4 rounded-xl border border-transparent hover:border-primary/10 dark:hover:border-primary/20 font-[family-name:var(--font-geist-sans)]"
+                          className={cn(
+                            "group flex items-center space-x-4 text-base font-medium transition-all duration-300 py-4 px-4 rounded-xl border font-[family-name:var(--font-geist-sans)]",
+                            isActive
+                              ? "text-foreground bg-primary/5 border-primary/10 dark:border-primary/20"
+                              : "text-muted-foreground hover:text-foreground hover:bg-primary/5 border-transparent hover:border-primary/10 dark:hover:border-primary/20"
+                          )}
                         >
-                          <div className="bg-gradient-to-br from-primary/15 to-primary/5 dark:from-primary/10 dark:to-primary/10 border border-primary/20 dark:border-primary/30 p-3 rounded-xl transition-all duration-300">
+                          <div
+                            className={cn(
+                              "bg-gradient-to-br border p-3 rounded-xl transition-all duration-300",
+                              isActive
+                                ? "from-primary/20 to-primary/10 dark:from-primary/15 dark:to-primary/15 border-primary/30 dark:border-primary/40"
+                                : "from-primary/15 to-primary/5 dark:from-primary/10 dark:to-primary/10 border-primary/20 dark:border-primary/30"
+                            )}
+                          >
                             <IconComponent className="h-5 w-5 text-primary" />
                           </div>
                           <span className="flex-1">{item.name}</span>
-                          <div className="w-2 h-2 rounded-full bg-primary/0 group-hover:bg-primary transition-all duration-300" />
+                          <div
+                            className={cn(
+                              "w-2 h-2 rounded-full transition-all duration-300",
+                              isActive
+                                ? "bg-primary"
+                                : "bg-primary/0 group-hover:bg-primary"
+                            )}
+                          />
                         </Link>
                       );
                     })}
