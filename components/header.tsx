@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
-import { Menu, Coffee, Home, Info, MapPin, Phone, Star } from "lucide-react";
+import { Menu, Coffee, Home, Info, Phone, Star } from "lucide-react";
 
 // Navigation items
 const navigationItems = [
@@ -23,7 +23,6 @@ const navigationItems = [
   { name: "About", href: "/about", icon: Info },
   { name: "Menu", href: "/menu", icon: Coffee },
   { name: "Contact", href: "/contact", icon: Phone },
-  { name: "Locations", href: "/locations", icon: MapPin },
 ] as const;
 
 export function Header() {

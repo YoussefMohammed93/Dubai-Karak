@@ -13,7 +13,7 @@ import {
 
 export default function ProductsServicesSection() {
   return (
-    <section className="py-24 bg-muted/75 dark:bg-muted/55">
+    <section className="py-24 pb-2 bg-muted/75 dark:bg-muted/55">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center space-y-6 mb-16">

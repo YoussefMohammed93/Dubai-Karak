@@ -49,7 +49,7 @@ export default function AboutHeroSection() {
       <div className="relative z-10 max-w-7xl px-4 md:px-6 mx-auto pt-28 pb-16">
         <div className="text-center space-y-8 max-w-5xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center gap-3 bg-background/90 dark:bg-muted/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/80 text-primary px-6 py-3 rounded-full text-sm font-medium font-[family-name:var(--font-geist-sans)] border border-primary/20">
+          <div className="inline-flex items-center gap-3 bg-background/90 dark:bg-muted/80 backdrop-blur-md supports-[backdrop-filter]:bg-background/80 text-primary px-6 py-3 rounded-full text-sm font-medium font-[family-name:var(--font-geist-sans)] border border-border/40">
             <Compass className="w-5 h-5" />
             <span>Our Journey & Story</span>
             <Compass className="w-5 h-5 scale-x-[-1]" />
