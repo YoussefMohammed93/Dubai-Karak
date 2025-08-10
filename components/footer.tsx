@@ -14,9 +14,13 @@ import {
   Sparkles,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { useTheme } from "next-themes";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+
+  const { theme } = useTheme();
 
   const socialLinks = [
     { name: "Instagram", href: "#", icon: Instagram },
@@ -29,7 +33,6 @@ export default function Footer() {
     { name: "About", href: "/about" },
     { name: "Menu", href: "/menu" },
     { name: "Contact", href: "/contact" },
-    { name: "Locations", href: "/locations" },
   ];
 
   return (
@@ -48,8 +51,15 @@ export default function Footer() {
               <div className="relative z-10 space-y-6">
                 {/* Brand Logo and Name */}
                 <div className="flex items-center space-x-4">
-                  <div className="relative bg-gradient-to-br from-primary/15 to-primary/5 dark:from-primary/20 dark:to-primary/10 border border-primary/20 dark:border-primary/30 p-3 rounded-xl">
-                    <Coffee className="h-8 w-8 text-primary" />
+                  <div className="relative">
+                    <Image
+                      src={theme === "dark" ? "/logo-dark.png" : "/logo.png"}
+                      alt="Dubai Karak Logo"
+                      priority
+                      width={100}
+                      height={100}
+                      className="h-24 w-24 object-contain"
+                    />
                   </div>
                   <div className="flex flex-col">
                     <span className="text-2xl font-black font-[family-name:var(--font-merienda)] bg-gradient-to-r from-primary via-primary/90 to-primary/70 dark:from-primary dark:via-primary/80 dark:to-primary/90 bg-clip-text text-transparent">
@@ -60,8 +70,8 @@ export default function Footer() {
                 {/* Brand Promise */}
                 <div className="space-y-4">
                   <p className="text-muted-foreground font-[family-name:var(--font-geist-sans)] leading-relaxed">
-                    Experience the authentic taste of Dubai&apos;s beloved Karak tea,
-                    crafted with the finest Indian tea leaves and purified
+                    Experience the authentic taste of Dubai&apos;s beloved Karak
+                    tea, crafted with the finest Indian tea leaves and purified
                     water.
                   </p>
                   <div className="relative">
@@ -72,8 +82,8 @@ export default function Footer() {
                       </span>
                     </div>
                     <p className="text-sm font-semibold text-foreground font-[family-name:var(--font-merienda)] italic">
-                      &quot;The first sip will take you far, and your mind will be at
-                      peace—leaving you with just one word to say:
+                      &quot;The first sip will take you far, and your mind will
+                      be at peace—leaving you with just one word to say:
                       <span className="text-primary ml-1">Waaaw!</span>&quot;
                     </p>
                   </div>
@@ -244,7 +254,7 @@ export default function Footer() {
             </div>
           </div>
           {/* Final Brand Touch */}
-          <div className="text-center mt-6 pt-6 border-t border-border/20">
+          <div className="text-center mt-6 pt-6">
             <p className="text-xs text-muted-foreground font-[family-name:var(--font-geist-sans)] italic">
               Crafted with{" "}
               <Heart className="inline w-4 h-4 text-primary mx-1" /> in Dubai

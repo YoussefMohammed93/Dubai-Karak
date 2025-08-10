@@ -14,7 +14,6 @@ import {
   Search,
   Printer,
 } from "lucide-react";
-import { useState } from "react";
 import {
   Card,
   CardContent,
@@ -22,6 +21,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -264,7 +264,7 @@ export default function TermsContentSection() {
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-6">
               {/* Search */}
-              <Card className="bg-card/80 dark:bg-muted/60">
+              <Card className="bg-card/80 dark:bg-muted/60 border-primary/40">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-lg font-[family-name:var(--font-geist-sans)] flex items-center gap-2">
                     <Search className="h-5 w-5 text-primary" />
@@ -276,12 +276,12 @@ export default function TermsContentSection() {
                     placeholder="Search terms..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full"
+                    className="w-full border border-primary/40"
                   />
                 </CardContent>
               </Card>
               {/* Table of Contents */}
-              <Card className="bg-card/80 dark:bg-muted/60">
+              <Card className="bg-card/80 dark:bg-muted/60 border-primary/40">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-lg font-[family-name:var(--font-geist-sans)]">
                     Table of Contents
@@ -297,7 +297,7 @@ export default function TermsContentSection() {
                           <button
                             key={item.id}
                             onClick={() => scrollToSection(item.id)}
-                            className={`w-full text-left p-3 rounded-lg transition-all duration-200 flex items-center gap-3 hover:bg-accent hover:text-accent-foreground ${
+                            className={`w-full text-left p-3 rounded-lg transition-all duration-200 flex items-center gap-3 hover:bg-accent/20 hover:text-accent-foreground ${
                               activeSection === item.id
                                 ? "bg-primary/10 text-primary border border-primary/20"
                                 : "text-muted-foreground hover:text-foreground"
@@ -315,7 +315,7 @@ export default function TermsContentSection() {
                 </CardContent>
               </Card>
               {/* Actions */}
-              <Card>
+              <Card className="dark:bg-muted/60 border-primary/40">
                 <CardContent className="pt-6">
                   <div className="space-y-3">
                     <Button
@@ -369,7 +369,7 @@ export default function TermsContentSection() {
               </div>
               {/* Search Results Info */}
               {searchTerm && (
-                <div className="mb-6 p-4 bg-primary/5 dark:bg-primary/10 border border-primary/20 rounded-lg">
+                <div className="mb-6 p-4 bg-primary/5 dark:bg-primary/5 border border-primary/20 rounded-lg">
                   <p className="text-sm text-muted-foreground font-[family-name:var(--font-geist-sans)]">
                     {filteredSections.length === 0
                       ? `No results found for "${searchTerm}"`
@@ -380,7 +380,7 @@ export default function TermsContentSection() {
                 </div>
               )}
               {filteredSections.length === 0 && searchTerm ? (
-                <Card className="text-center py-12">
+                <Card className="text-center py-12 dark:bg-muted/60 border-primary/40">
                   <CardContent>
                     <Search className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                     <h3 className="text-lg font-semibold mb-2 font-[family-name:var(--font-geist-sans)]">
@@ -413,7 +413,7 @@ export default function TermsContentSection() {
                           data-section={section.id}
                           id={section.id}
                         >
-                          <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-accent/50 transition-colors duration-200">
+                          <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-accent/20 transition-colors duration-200">
                             <div className="flex items-center gap-4 text-left">
                               <div className="bg-primary/10 dark:bg-primary/20 p-2 rounded-lg">
                                 <Icon className="h-5 w-5 text-primary" />

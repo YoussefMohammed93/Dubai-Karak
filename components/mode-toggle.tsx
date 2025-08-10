@@ -56,8 +56,8 @@ export function ModeToggle() {
       className={cn(
         "relative group overflow-hidden",
         "bg-background/80 backdrop-blur-sm",
-        "border-border/50 dark:border-border/30 hover:border-primary/30",
-        "hover:bg-accent/50 hover:text-accent-foreground",
+        "border-border/20 hover:border-primary/30",
+        "hover:bg-accent/20 hover:text-accent-foreground",
         "transition-all duration-300 ease-in-out",
         "min-w-[40px] sm:min-w-[80px] h-8 sm:h-9 px-3 gap-2"
       )}

@@ -127,7 +127,7 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-7xl px-4 md:px-6 mx-auto pt-28">
         <div className="text-center space-y-8 max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-background/85 dark:bg-muted/90 backdrop-blur-md supports-[backdrop-filter]:bg-background/75 text-muted-foreground px-4 py-2 rounded-full text-sm font-medium font-[family-name:var(--font-geist-sans)]">
+          <div className="inline-flex items-center gap-2 bg-background dark:bg-muted/90 backdrop-blur-md supports-[backdrop-filter]:bg-background/75 text-muted-foreground px-4 py-2 rounded-full text-sm font-medium font-[family-name:var(--font-geist-sans)]">
             <Star className="w-4 h-4 fill-current text-primary" />
             Premium Street-Style Karak Tea
           </div>

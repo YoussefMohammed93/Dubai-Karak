@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 import * as React from "react";
 
@@ -8,10 +9,10 @@ import {
   Sheet,
   SheetContent,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
@@ -28,7 +29,9 @@ const navigationItems = [
 export function Header() {
   const [isSheetOpen, setIsSheetOpen] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const [mounted, setMounted] = React.useState(false);
   const pathname = usePathname();
+  const { theme } = useTheme();
 
   // Handle scroll effect
   React.useEffect(() => {
@@ -38,6 +41,11 @@ export function Header() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Avoid hydration mismatch
+  React.useEffect(() => {
+    setMounted(true);
   }, []);
 
   const closeSheet = () => {
@@ -53,18 +61,23 @@ export function Header() {
       } supports-[backdrop-filter]:bg-background/80`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           {/* Brand Logo/Name - Left Side */}
           <div className="flex-shrink-0">
             <Link
               href="/"
-              className="group flex items-center space-x-3 text-foreground hover:text-primary transition-all duration-300"
+              className="group flex items-center gap-2 text-foreground hover:text-primary transition-all duration-300"
               aria-label="Dubai Karak Home"
             >
               <div className="relative">
-                <div className="relative bg-gradient-to-br from-primary/15 to-primary/5 dark:from-primary/20 dark:to-primary/10 border border-primary/20 dark:border-primary/30 p-2.5 rounded-xl">
-                  <Coffee className="h-5 w-5 text-primary" />
-                </div>
+                <Image
+                  src={theme === "dark" ? "/logo-2-dark.png" : "/logo-2.png"}
+                  alt="Dubai Karak Logo"
+                  priority
+                  width={100}
+                  height={100}
+                  className="h-16 sm:h-24 w-16 sm:w-24 object-contain"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-black font-[family-name:var(--font-merienda)] bg-gradient-to-r from-primary via-primary/90 to-primary/70 dark:from-primary dark:via-primary/80 dark:to-primary/90 bg-clip-text text-transparent">
@@ -99,8 +112,8 @@ export function Header() {
                   className={cn(
                     "relative group flex items-center space-x-2 text-base font-medium transition-all duration-300 px-4 py-2 rounded-xl font-[family-name:var(--font-geist-sans)]",
                     isActive
-                      ? "text-foreground bg-primary/5 dark:bg-primary/10"
-                      : "text-muted-foreground hover:text-foreground hover:bg-primary/5 dark:hover:bg-primary/10"
+                      ? "text-foreground bg-primary/10 dark:bg-primary/10"
+                      : "text-muted-foreground hover:text-foreground hover:bg-primary/10 dark:hover:bg-primary/10"
                   )}
                 >
                   <IconComponent
@@ -132,8 +145,8 @@ export function Header() {
                   className={cn(
                     "md:hidden relative group overflow-hidden",
                     "dark:bg-input/30 backdrop-blur-sm",
-                    "border-border/50 dark:border-border/30 hover:border-primary/30",
-                    "hover:bg-accent/50 hover:text-accent-foreground",
+                    "border-border/20 dark:border-border/30 hover:border-primary/30",
+                    "hover:bg-accent/20 hover:text-foreground",
                     "transition-all duration-300 ease-in-out",
                     "min-w-[40px] sm:min-w-[80px] h-8 sm:h-9 px-3 gap-2"
                   )}
@@ -147,18 +160,11 @@ export function Header() {
                 className="w-[320px] sm:w-[400px] dark:bg-muted/40 backdrop-blur-xl border-r border-border/40"
               >
                 <SheetHeader>
-                  <SheetTitle className="flex items-center space-x-3 px-1.5 text-left">
-                    <div className="relative">
-                      <div className="bg-gradient-to-br from-primary/15 to-primary/5 dark:from-primary/20 dark:to-primary/10 border border-primary/20 dark:border-primary/30 p-2.5 rounded-xl">
-                        <Coffee className="h-6 w-6 text-primary" />
-                      </div>
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-lg font-black font-[family-name:var(--font-merienda)] bg-gradient-to-r from-primary via-primary/90 to-primary/70 bg-clip-text text-transparent">
-                        The Dubai Karak
-                      </span>
-                    </div>
-                  </SheetTitle>
+                  <div className="pt-2">
+                    <span className="text-lg font-black font-[family-name:var(--font-merienda)] bg-gradient-to-r from-primary via-primary/90 to-primary/70 bg-clip-text text-transparent">
+                      The Dubai Karak
+                    </span>
+                  </div>
                 </SheetHeader>
                 {/* Mobile Navigation */}
                 <nav className="mt-8 px-1.5" aria-label="Mobile navigation">
