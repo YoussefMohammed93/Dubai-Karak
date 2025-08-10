@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import Footer from "@/components/footer";
 import { Header } from "@/components/header";
 import { Geist, Merienda } from "next/font/google";
+import ScrollToTop from "@/components/scroll-to-top";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
@@ -44,6 +45,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </ThemeProvider>
+        <ScrollToTop />
       </body>
     </html>
   );
