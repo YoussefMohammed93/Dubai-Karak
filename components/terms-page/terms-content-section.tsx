@@ -363,7 +363,7 @@ export default function TermsContentSection() {
                   </div>
                   <div className="inline-flex items-center gap-2 bg-background/85 dark:bg-muted/90 backdrop-blur-md border border-border/40 px-4 py-2 rounded-full text-sm font-medium font-[family-name:var(--font-geist-sans)]">
                     <FileText className="w-4 h-4 text-primary" />
-                    <span className="text-muted-foreground">Version 2.1</span>
+                    <span className="text-muted-foreground">Version 1.0</span>
                   </div>
                 </div>
               </div>

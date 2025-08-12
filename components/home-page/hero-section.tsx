@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Star, Coffee, Heart } from "lucide-react";
 
@@ -133,7 +135,7 @@ export default function HeroSection() {
           </div>
           {/* Main heading */}
           <div className="space-y-4">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight font-[family-name:var(--font-merienda)]">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight font-[family-name:var(--font-merienda)]">
               <span className="text-foreground">Authentic</span>{" "}
               <span className="bg-gradient-to-r from-primary via-primary/70 to-primary/90 bg-clip-text text-transparent">
                 Dubai Karak
@@ -170,17 +172,24 @@ export default function HeroSection() {
           </div>
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" aria-label="Find Dubai Karak locations near you">
-              Find Locations
-              <ArrowRight className="w-5 h-5" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              aria-label="Learn more about Dubai Karak tea"
-            >
-              Our Story
-            </Button>
+            <Link href="/menu">
+              <Button
+                size="lg"
+                aria-label="Learn more about Dubai Karak tea Menu"
+              >
+                View Our Menu
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </Link>
+            <Link href="/about">
+              <Button
+                size="lg"
+                variant="outline"
+                aria-label="Learn more about Dubai Karak tea"
+              >
+                Our Story
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

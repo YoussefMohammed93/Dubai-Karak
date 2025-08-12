@@ -36,7 +36,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-br from-muted/40 via-background to-muted/60 dark:from-muted/30 dark:via-background dark:to-muted/40 border-t border-border/40">
+    <footer className="relative bg-gradient-to-br from-muted/40 via-background to-muted/60 dark:from-muted/30 dark:via-background dark:to-muted/40 border-t border-border/20">
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-20">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-16">

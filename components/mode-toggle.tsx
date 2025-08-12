@@ -61,9 +61,7 @@ export function ModeToggle() {
         "transition-all duration-300 ease-in-out",
         "min-w-[40px] sm:min-w-[80px] h-8 sm:h-9 px-3 gap-2"
       )}
-      aria-label={`Switch to ${
-        theme === "light" ? "dark" : theme === "dark" ? "system" : "light"
-      } mode`}
+      aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
     >
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -72,8 +70,8 @@ export function ModeToggle() {
         {getThemeIcon()}
       </div>
       <span className="sr-only">
-        Current theme: {getThemeLabel()}. Click to cycle through light, dark,
-        and system themes.
+        Current theme: {getThemeLabel()}. Click to toggle between light and dark
+        themes.
       </span>
     </Button>
   );

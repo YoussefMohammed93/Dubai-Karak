@@ -3,9 +3,10 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 import Footer from "@/components/footer";
+import ScrollToTop from "@/components/scroll-to-top";
+
 import { Header } from "@/components/header";
 import { Geist, Merienda } from "next/font/google";
-import ScrollToTop from "@/components/scroll-to-top";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
@@ -36,9 +37,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${merienda.variable} font-sans antialiased`}
       >
         <ThemeProvider
-          enableSystem
+          enableSystem={false}
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           disableTransitionOnChange
         >
           <Header />

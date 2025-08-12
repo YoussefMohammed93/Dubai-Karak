@@ -48,7 +48,7 @@ const products = [
 
 export default function ProductsMenuSection() {
   return (
-    <section className="py-24 bg-muted/75 dark:bg-muted/55">
+    <section className="pt-12 pb-20 bg-muted/75 dark:bg-muted/55">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center space-y-6 mb-16">

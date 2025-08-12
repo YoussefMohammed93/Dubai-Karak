@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import AboutHeroSection from "@/components/about-page/about-hero-section";
 import BrandStorySection from "@/components/about-page/brand-story-section";
-import BrandPromiseSection from "@/components/about-page/brand-promise-section";
 import MissionVisionSection from "@/components/about-page/mission-vision-section";
 
 export const metadata: Metadata = {
@@ -25,7 +24,6 @@ export default function AboutPage() {
       <AboutHeroSection />
       <BrandStorySection />
       <MissionVisionSection />
-      <BrandPromiseSection />
     </main>
   );
 }
