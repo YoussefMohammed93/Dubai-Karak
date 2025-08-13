@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
+import ContactForm from "@/components/contact-form";
 import ContactHeroSection from "@/components/contact-page/contact-hero-section";
-import ContactInfoSection from "@/components/contact-page/contact-info-section";
 
 export const metadata: Metadata = {
   title: "Contact Us - Dubai Karak | Get in Touch",
@@ -30,7 +30,7 @@ export default function ContactPage() {
   return (
     <main>
       <ContactHeroSection />
-      <ContactInfoSection />
+      <ContactForm />
     </main>
   );
 }

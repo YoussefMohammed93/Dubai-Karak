@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import ContactForm from "@/components/contact-form";
 import AboutHeroSection from "@/components/about-page/about-hero-section";
 import MissionVisionSection from "@/components/about-page/mission-vision-section";
 
@@ -22,6 +23,7 @@ export default function AboutPage() {
     <main>
       <AboutHeroSection />
       <MissionVisionSection />
+      <ContactForm />
     </main>
   );
 }

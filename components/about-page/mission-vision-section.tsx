@@ -8,7 +8,7 @@ export default function MissionVisionSection() {
   const { theme } = useTheme();
 
   return (
-    <section className="w-full">
+    <section className="w-full bg-muted/75 dark:bg-muted/55">
       {/* Top CTA */}
       <div className="flex flex-col items-center justify-center py-16 px-4 md:px-6">
         <div className="relative">
@@ -40,7 +40,7 @@ export default function MissionVisionSection() {
           />
         </div>
         {/* Top Right - Our Mission Text */}
-        <div className="flex items-center justify-center p-8 md:p-12 lg:p-24 bg-background aspect-[4/3]">
+        <div className="flex items-center justify-center p-8 md:p-12 lg:p-24 aspect-[4/3]">
           <div className="max-w-lg w-full text-center lg:text-left md:p-6">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground font-[family-name:var(--font-merienda)] mb-6">
               Our Mission
@@ -54,7 +54,7 @@ export default function MissionVisionSection() {
           </div>
         </div>
         {/* Bottom Right - Our Vision Text */}
-        <div className="flex items-center justify-center p-8 md:p-12 lg:p-24 bg-muted/30 lg:order-4 aspect-[4/3]">
+        <div className="flex items-center justify-center p-8 md:p-12 lg:p-24 lg:order-4 aspect-[4/3]">
           <div className="max-w-lg w-full text-center lg:text-left md:p-6">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground font-[family-name:var(--font-merienda)] mb-6">
               Our Vision
