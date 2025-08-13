@@ -1,5 +1,4 @@
 import "./globals.css";
-
 import type { Metadata } from "next";
 
 import Footer from "@/components/footer";
@@ -41,10 +40,13 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="light"
           disableTransitionOnChange
+          storageKey="dubai-karak-theme"
         >
-          <Header />
-          {children}
-          <Footer />
+          <div suppressHydrationWarning>
+            <Header />
+            {children}
+            <Footer />
+          </div>
         </ThemeProvider>
         <ScrollToTop />
       </body>

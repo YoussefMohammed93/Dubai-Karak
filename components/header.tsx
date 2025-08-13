@@ -58,7 +58,7 @@ export function Header() {
         isScrolled
           ? "bg-background/95 dark:bg-muted/65 backdrop-blur-3xl border-b border-border/40 shadow-lg shadow-black/5 dark:shadow-black/20"
           : "bg-background/80 dark:bg-muted/55 backdrop-blur-md border-b border-border/20"
-      } supports-[backdrop-filter]:bg-background/50`}
+      } supports-[backdrop-filter]:bg-background/80 supports-[backdrop-filter]:dark:bg-background/50`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="flex h-20 items-center justify-between">
