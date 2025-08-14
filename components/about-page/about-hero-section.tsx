@@ -12,11 +12,16 @@ export default function AboutHeroSection() {
         fill
         priority
       />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/50"></div>
       {/* About Us Text */}
-      <div className="relative z-10 flex items-center justify-center pt-10 sm:pt-0">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white text-center font-[family-name:var(--font-merienda)] drop-shadow-2xl">
-          About Us
+      <div className="relative z-10 flex flex-col gap-8 items-center justify-center pt-10">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white text-center font-[family-name:var(--font-merienda)] drop-shadow-2xl">
+          Authentic Dubai Karak
         </h1>
+        <p className="text-xl md:text-2xl text-white text-center drop-shadow-2xl">
+          Brewed with Tradition . Richly Spiced . Truly Dubai
+        </p>
       </div>
     </section>
   );

@@ -5,7 +5,7 @@ import Footer from "@/components/footer";
 import ScrollToTop from "@/components/scroll-to-top";
 
 import { Header } from "@/components/header";
-import { Geist, Merienda } from "next/font/google";
+import { Geist, Merienda, Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
@@ -17,6 +17,13 @@ const merienda = Merienda({
   variable: "--font-merienda",
   weight: ["400", "700"],
   subsets: ["latin"],
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -33,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${merienda.variable} font-sans antialiased`}
+        className={`${geistSans.variable} ${merienda.variable} ${inter.variable} font-sans antialiased`}
       >
         <ThemeProvider
           enableSystem={false}
