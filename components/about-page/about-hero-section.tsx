@@ -16,7 +16,7 @@ export default function AboutHeroSection() {
       <div className="absolute inset-0 bg-black/50"></div>
       {/* About Us Text */}
       <div className="relative z-10 flex flex-col gap-8 items-center justify-center pt-10">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white text-center font-[family-name:var(--font-merienda)] drop-shadow-2xl">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white text-center font-[family-name:var(--font-inter)] drop-shadow-2xl">
           Authentic Dubai Karak
         </h1>
         <p className="text-xl md:text-2xl text-white text-center drop-shadow-2xl">
