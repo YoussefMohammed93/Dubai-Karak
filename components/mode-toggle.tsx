@@ -15,6 +15,10 @@ export function ModeToggle() {
     setMounted(true);
   }, []);
 
+  if (!mounted) {
+    return null;
+  }
+
   const toggleTheme = () => {
     if (theme === "light") {
       setTheme("dark");
@@ -24,8 +28,6 @@ export function ModeToggle() {
   };
 
   const getThemeIcon = () => {
-    if (!mounted) return <Sun className="h-4 w-4" />;
-
     switch (theme) {
       case "light":
         return <Sun className="h-4 w-4 text-amber-500" />;
@@ -37,8 +39,6 @@ export function ModeToggle() {
   };
 
   const getThemeLabel = () => {
-    if (!mounted) return "Light";
-
     switch (theme) {
       case "light":
         return "Light";
@@ -61,6 +61,7 @@ export function ModeToggle() {
         "transition-all duration-300 ease-in-out",
         "min-w-[40px] sm:min-w-[80px] h-8 sm:h-9 px-3 gap-2"
       )}
+      suppressHydrationWarning
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
     >
       {/* Background gradient effect */}

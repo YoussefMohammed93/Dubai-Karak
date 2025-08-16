@@ -21,13 +21,13 @@ const products = [
       "Creamy Texture",
       "Street-Style Authentic",
     ],
-    image: "/api/placeholder/400/300",
+    image: "/product-1.png",
     gradient: "from-primary/20 to-primary/10",
     popular: true,
   },
   {
     id: 2,
-    name: "Royal Saffron Karak",
+    name: "A spicy-sauce Chips Oman sandwich",
     description:
       "An elevated experience featuring premium saffron threads and exotic spices. This luxurious blend combines the traditional Karak base with the golden essence of saffron, creating a truly royal tea experience.",
     price: "USD 18",
@@ -40,7 +40,7 @@ const products = [
       "Luxury Experience",
       "Limited Edition",
     ],
-    image: "/api/placeholder/400/300",
+    image: "/product-2.jpg",
     gradient: "from-amber-500/20 to-orange-400/10",
     popular: false,
   },
@@ -79,7 +79,7 @@ export default function ProductsMenuSection() {
               <div className="relative z-10 p-8">
                 {/* Product Header */}
                 <div className="flex flex-col sm:flex-row gap-5 sm:gap-2 items-start justify-between mb-6">
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-start gap-4">
                     <div
                       className={`bg-gradient-to-br ${product.gradient} border border-primary/20 dark:border-primary/30 p-3 rounded-2xl`}
                     >
@@ -126,12 +126,12 @@ export default function ProductsMenuSection() {
                   </div>
                 </div>
                 {/* Product Image Placeholder */}
-                <div className="relative mb-6 rounded-2xl overflow-hidden bg-gradient-to-br from-primary/5 to-primary/10 dark:from-primary/10 dark:to-primary/5 h-72 flex items-center justify-center">
+                <div className="relative mb-6 !rounded-2xl overflow-hidden bg-gradient-to-br from-primary/5 to-primary/10 dark:from-primary/10 dark:to-primary/5 h-72 lg:h-96 flex items-center justify-center">
                   <Image
-                    src="/product.png"
+                    src={product.image}
                     alt="product"
                     fill
-                    className="px-8 sm:px-16 md:px-20 py-5"
+                    className="px-5 sm:px-40 md:px-52 lg:px-5 py-5 !rounded-2xl"
                   />
                 </div>
                 {/* Description */}

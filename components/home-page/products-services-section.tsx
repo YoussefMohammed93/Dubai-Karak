@@ -143,7 +143,7 @@ export default function ProductsServicesSection() {
               <div className="w-2 h-2 bg-primary rounded-full"></div>
             </div>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <div className="group relative overflow-hidden shadow-xs bg-background/80 dark:bg-muted/80 backdrop-blur-md border border-border/40 rounded-2xl p-6 text-center transition-all duration-300 cursor-pointer">
               <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out transform -translate-x-full -translate-y-full group-hover:translate-x-0 group-hover:translate-y-0"></div>
               <div className="relative z-10">
@@ -186,21 +186,6 @@ export default function ProductsServicesSection() {
                 <p className="text-muted-foreground text-sm font-[family-name:var(--font-geist-sans)]">
                   Authentic blend of cardamom, ginger, and aromatic spices
                   following traditional recipes.
-                </p>
-              </div>
-            </div>
-            <div className="group relative overflow-hidden shadow-xs bg-background/80 dark:bg-muted/80 backdrop-blur-md border border-border/40 rounded-2xl p-6 text-center transition-all duration-300 cursor-pointer">
-              <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out transform -translate-x-full -translate-y-full group-hover:translate-x-0 group-hover:translate-y-0"></div>
-              <div className="relative z-10">
-                <div className="bg-primary/15 dark:bg-primary/20 border border-primary/20 dark:border-primary/10 p-4 rounded-2xl w-16 h-16 mx-auto flex items-center justify-center">
-                  <Award className="w-8 h-8 text-primary" />
-                </div>
-                <h4 className="text-lg font-semibold text-foreground py-3 font-[family-name:var(--font-merienda)]">
-                  Premium Milk
-                </h4>
-                <p className="text-muted-foreground text-sm font-[family-name:var(--font-geist-sans)]">
-                  Fresh, high-quality milk creating the perfect creamy texture
-                  and rich taste.
                 </p>
               </div>
             </div>

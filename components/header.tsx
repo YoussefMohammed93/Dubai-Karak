@@ -29,7 +29,7 @@ const navigationItems = [
 export function Header() {
   const [isSheetOpen, setIsSheetOpen] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
-  const [, setMounted] = React.useState(false);
+  const [mounted, setMounted] = React.useState(false);
   const pathname = usePathname();
   const { theme } = useTheme();
 
@@ -70,14 +70,16 @@ export function Header() {
               aria-label="Dubai Karak Home"
             >
               <div className="relative">
-                <Image
-                  src={theme === "dark" ? "/logo-2-dark.png" : "/logo-2.png"}
-                  alt="Dubai Karak Logo"
-                  priority
-                  width={100}
-                  height={100}
-                  className="h-16 sm:h-24 w-16 sm:w-24 object-contain"
-                />
+                {mounted && (
+                  <Image
+                    src={theme === "dark" ? "/logo-2-dark.png" : "/logo-2.png"}
+                    alt="Dubai Karak Logo"
+                    priority
+                    width={100}
+                    height={100}
+                    className="h-16 sm:h-24 w-16 sm:w-24 object-contain"
+                  />
+                )}
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-black font-[family-name:var(--font-merienda)] bg-gradient-to-r from-primary via-primary/90 to-primary/70 dark:from-primary dark:via-primary/80 dark:to-primary/90 bg-clip-text text-transparent">
