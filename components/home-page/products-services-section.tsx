@@ -1,6 +1,6 @@
 "use client";
 
-import { Coffee, Droplets, Leaf, Award, Heart } from "lucide-react";
+import { Coffee, Droplets, Leaf, Heart } from "lucide-react";
 
 export default function ProductsServicesSection() {
   return (

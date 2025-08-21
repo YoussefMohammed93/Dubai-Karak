@@ -3,13 +3,14 @@
 import {
   MapPin,
   Mail,
-  Instagram,
-  Facebook,
   Heart,
   Award,
   Sparkles,
+  Facebook,
+  Instagram,
 } from "lucide-react";
 
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -17,6 +18,12 @@ import { useTheme } from "next-themes";
 
 export default function Footer() {
   const { theme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+  // Avoid hydration mismatch
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const currentYear = new Date().getFullYear();
 
@@ -54,14 +61,16 @@ export default function Footer() {
               {/* Logo */}
               <div className="flex items-center space-x-4">
                 <div className="relative">
-                  <Image
-                    src={theme === "dark" ? "/logo-dark.png" : "/logo.png"}
-                    alt="Dubai Karak Logo"
-                    priority
-                    width={200}
-                    height={100}
-                    className="h-20 w-48 object-contain"
-                  />
+                  {mounted && (
+                    <Image
+                      src={theme === "dark" ? "/logo-dark.png" : "/logo.png"}
+                      alt="Dubai Karak Logo"
+                      priority
+                      width={200}
+                      height={100}
+                      className="h-20 w-48 object-contain"
+                    />
+                  )}
                 </div>
               </div>
               {/* Brand Promise */}

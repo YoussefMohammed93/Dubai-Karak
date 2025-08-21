@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+
 import { Sparkles } from "lucide-react";
 
 const products = [
@@ -11,7 +12,7 @@ const products = [
   },
   {
     id: 2,
-    name: "A spicy-sauce Chips Oman sandwich",
+    name: "Spicy-sauce Chips Oman sandwich",
     image: "/product-2.jpg",
   },
 ];
@@ -35,14 +36,13 @@ export default function ProductsMenuSection() {
             exceptional experience.
           </p>
         </div>
-
         {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 xl:gap-24 max-w-5xl mx-auto pt-12">
           {products.map((product) => (
             <div key={product.id} className="group relative">
               <div className="relative z-10 text-center space-y-6">
                 {/* Product Image with rounded-full background */}
-                <div className="relative mx-auto w-60 h-60 md:w-72 md:h-72 lg:w-80 lg:h-80">
+                <div className="relative mx-auto w-60 h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 2xl:w-[26rem] 2xl:h-[26rem]">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/20 rounded-full"></div>
                   <div className="relative w-full h-full rounded-full overflow-hidden p-4">
                     <Image
@@ -53,7 +53,6 @@ export default function ProductsMenuSection() {
                     />
                   </div>
                 </div>
-
                 {/* Product Name */}
                 <h3 className="text-xl md:text-2xl font-bold text-foreground font-[family-name:var(--font-merienda)] leading-tight">
                   {product.name}

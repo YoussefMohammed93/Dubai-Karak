@@ -1,25 +1,34 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 
 import { useTheme } from "next-themes";
 
 export default function MissionVisionSection() {
   const { theme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+  // Avoid hydration mismatch
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <section className="w-full bg-muted/75 dark:bg-muted/55">
       {/* Top CTA */}
       <div className="flex flex-col items-center justify-center py-16 px-4 md:px-6">
         <div className="relative">
-          <Image
-            src={theme === "dark" ? "/logo-dark.png" : "/logo.png"}
-            alt="Dubai Karak Logo"
-            priority
-            width={200}
-            height={100}
-            className="h-20 w-48 object-contain"
-          />
+          {mounted && (
+            <Image
+              src={theme === "dark" ? "/logo-dark.png" : "/logo.png"}
+              alt="Dubai Karak Logo"
+              priority
+              width={200}
+              height={100}
+              className="h-20 w-48 object-contain"
+            />
+          )}
         </div>
         <p className="text-muted-foreground text-sm sm:text-lg max-w-lg text-center pt-5">
           The first sip will take you far, and your mind will be at
@@ -32,7 +41,7 @@ export default function MissionVisionSection() {
           {/* Mission Image */}
           <div className="relative w-full lg:w-1/2 aspect-[4/3] lg:aspect-square bg-muted/20">
             <Image
-              src="/mission.png"
+              src="/mission.jpg"
               alt="Our Mission - Dubai Karak brewing tradition"
               fill
               className="object-cover"
@@ -66,7 +75,7 @@ export default function MissionVisionSection() {
           {/* History Image */}
           <div className="relative w-full lg:w-1/2 aspect-[4/3] lg:aspect-square bg-muted/40">
             <Image
-              src="/history.avif"
+              src="/history.jpg"
               alt="Our Vision - Global recognition of Dubai Karak culture"
               fill
               className="object-cover"
@@ -121,9 +130,9 @@ export default function MissionVisionSection() {
               </h2>
               <p className="text-xl font-semibold text-muted-foreground leading-relaxed font-[family-name:var(--font-geist-sans)]">
                 To become the most beloved premium Karak brand, recognized
-                globally for authenticity and quality, while preserving Dubai&apos;s
-                rich tea culture and creating lasting connections across
-                communities.
+                globally for authenticity and quality, while preserving
+                Dubai&apos;s rich tea culture and creating lasting connections
+                across communities.
               </p>
             </div>
           </div>
